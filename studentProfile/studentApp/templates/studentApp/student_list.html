@@ -7,10 +7,9 @@
     <h1>Student List</h1>
     <ul>
         {% for student in students %}
-            <li>
-                <a href="{% url 'student_detail' student.pk %}">{{ student.name }}</a>
-            </li>
+        <li><a href="{% url 'student_detail' student.id %}">{{ student.name }}</a></li>
         {% endfor %}
     </ul>
+    <a href="{% url 'class_list' %}">Back to Class List</a>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Sheet for {{ student.name }}</title>
+</head>
+<body>
+    <h1>Grade Sheet for {{ student.name }}</h1>
+    <p>Class: {{ student.student_class.name }}</p>
+    <p>Roll Number: {{ student.roll_number }}</p>
+
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="padding: 8px; text-align: left;">Subject</th>
+                <th style="padding: 8px; text-align: left;">Full Marks</th>
+                <th style="padding: 8px; text-align: left;">Obtained Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student_subject in student_subjects %}
+            <tr>
+                <td style="padding: 8px;">{{ student_subject.subject.name }}</td>
+                <td style="padding: 8px;">{{ student_subject.full_marks }}</td>
+                <td style="padding: 8px;">{{ student_subject.obtained_marks }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>GPA: {{ gpa }}</p>
+
+    <!-- Optional: Link to download the PDF version -->
+    <a href="{% url 'generate_grade_sheet' student.pk %}">Download PDF Version</a>
+</body>
+</html>
