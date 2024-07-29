@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>{{ student.name }}</h1>
+<<<<<<< HEAD
     <p>Class: {{ student.student_class.name }}</p>
     <p>Roll Number: {{ student.roll_number }}</p>
     <p>Parents' Names: {{ student.parents_name }}</p>
@@ -27,5 +28,19 @@
     <a href="{% url 'student_list' student.student_class.id %}">Back to Student List</a>
     <br>
     <a href="{% url 'generate_grade_sheet' student.pk %}">Generate and Download Grade Sheet</a>
+=======
+    <p>Parents' Name: {{ student.parents_name }}</p>
+    <p>Class: {{ student.class_name }}</p>
+    <p>Roll No: {{ student.roll_no }}</p>
+    <p>Behavior and Social Skills: {{ student.behavior_and_social_skills }}</p>
+    <p>Interests and Extracurricular: {{ student.interests_and_extracurricular }}</p>
+    <p>Motivation and Engagement: {{ student.motivation_and_engagement }}</p>
+    <p>Special Needs: {{ student.special_needs }}</p>
+    <p>Unhealthy Habits: {{ student.unhealthy_habits }}</p>
+    <p>Photo: <img src="{{ student.photo.url }}" alt="{{ student.name }}'s photo"></p>
+    <p>Grade Sheet: <a href="{{ student.grade_sheet.url }}">Download</a></p>
+    <a href="{% url 'student_list' %}">Back</a>
+    <a href="{% url 'student_detail' student.pk|add:1 %}">Next</a>
+>>>>>>> origin/master
 </body>
 </html>

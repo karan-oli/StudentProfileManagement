@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, get_object_or_404,redirect
 from .models import Student, Class, StudentSubject
 
@@ -42,3 +43,16 @@ def add_all_subjects_to_student(request, student_id):
         )
     
     return redirect('student_detail', pk=student_id)
+=======
+from django.shortcuts import render
+from .models import Student
+# Create your views here.
+
+def student_list(request):
+    students = Student.objects.all()
+    return render(request, 'studentApp/student_list.html', {'students': students})
+
+def student_detail(request, pk):
+    student = Student.objects.get(pk=pk)
+    return render(request, 'studentApp/student_detail.html', {'student': student})
+>>>>>>> origin/master

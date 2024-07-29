@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -68,3 +69,11 @@ class StudentSubjectAdmin(admin.ModelAdmin):
     list_display = ['student', 'subject', 'full_marks', 'obtained_marks']
     list_filter = ['subject']
     search_fields = ['student__name', 'subject__name']
+=======
+from django.contrib import admin
+from .models import Student
+# Register your models here.
+
+
+admin.site.register(Student)
+>>>>>>> origin/master
